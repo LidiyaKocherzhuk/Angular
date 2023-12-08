@@ -12,6 +12,7 @@ const urls = {
   posts: {
     base: posts,
     byId: (id: number): string => `${posts}/${id}`,
+    comments: (id: number | string): string => `${posts}/${id}/comments`,
   }
 }
 
