@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {NgIf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
-import {IPost} from "../../interfaces";
+import {IComment, IPost} from "../../interfaces";
 import {PostsService} from "../../services";
+import {CommentComponent} from "../comment/comment.component";
 
 @Component({
   selector: 'app-post-details',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    CommentComponent,
+    NgForOf
   ],
   templateUrl: './post-details.component.html',
   styleUrl: './post-details.component.css'
 })
 export class PostDetailsComponent {
   post: IPost;
+  comments: IComment[];
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -32,6 +37,8 @@ export class PostDetailsComponent {
   }
 
   getPostComments() {
-
+    this.postsService
+      .getCommentsByPostId(this.post.id)
+      .subscribe(value => this.comments = value);
   }
 }

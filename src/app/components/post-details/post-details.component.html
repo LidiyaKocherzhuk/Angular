@@ -4,5 +4,9 @@
   <div> body: {{post.body}}</div>
   <div> title: {{post.title}}</div>
   <button (click)="getPostComments()">Get post comments</button>
-
+</div>
+<hr>
+<div *ngIf="comments">
+  <h3>The current post comments: </h3>
+  <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
 </div>
