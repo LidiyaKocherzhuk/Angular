@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import {UserDetailsComponent} from "../../components/user-details/user-details.component";
 import {PostDetailsComponent} from "../../components/post-details/post-details.component";
 

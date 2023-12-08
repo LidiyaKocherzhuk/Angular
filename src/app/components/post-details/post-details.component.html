@@ -1,1 +1,8 @@
-<p>post-details works!</p>
+<div *ngIf="post">
+  <div> id: {{post.id}}</div>
+  <div> userId: {{post.userId}}</div>
+  <div> body: {{post.body}}</div>
+  <div> title: {{post.title}}</div>
+  <button (click)="getPostComments()">Get post comments</button>
+
+</div>
