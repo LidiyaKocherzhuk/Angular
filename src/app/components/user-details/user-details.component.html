@@ -1,0 +1,17 @@
+<div *ngIf="user">
+  <h2>User Details</h2>
+  <hr>
+  <div>id : {{user.id}}</div>
+  <div>name : {{user.name}}</div>
+  <div>username : {{user.username}}</div>
+  <div>email : {{user.email}}</div>
+  <div>phone : {{user.phone}}</div>
+  <div>website : {{user.website}}</div>
+  <button (click)="getPosts()">Get user posts</button>
+</div>
+<hr>
+
+<div *ngIf="userPosts">
+  <h3>User Posts: </h3>
+  <app-post *ngFor="let post of userPosts" [post]="post"></app-post>
+</div>
