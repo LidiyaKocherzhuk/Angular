@@ -1,3 +1,4 @@
+export * from './cars-page/cars-page.component';
 export * from './comments-page/comments-page.component';
 export * from './post-details-page/post-details-page.component';
 export * from './posts-page/posts-page.component';
