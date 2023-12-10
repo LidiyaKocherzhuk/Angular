@@ -16,6 +16,7 @@ import {Routes} from '@angular/router';
 
 import {MainLayoutComponent} from './layouts';
 import {
+  CarsPageComponent,
   CommentsPageComponent,
   PostDetailsPageComponent,
   PostsPageComponent,
@@ -39,6 +40,7 @@ export const routes: Routes = [
           {path: 'comments', component: CommentsPageComponent}
         ]
       },
+      {path: 'cars', component: CarsPageComponent}
 
     ]
   }
