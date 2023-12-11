@@ -1,5 +1,11 @@
-form {
+.container {
+  padding: 20px;
+}
+.container form {
   display: flex;
   column-gap: 20px;
-  padding: 20px;
+}
+
+.err {
+  color: red;
 }

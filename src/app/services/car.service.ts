@@ -10,6 +10,7 @@ import {carUrls} from "../constants";
 })
 export class CarService {
   private trigger = new BehaviorSubject<boolean>(null);
+  private updateCar = new BehaviorSubject<ICar>(null);
 
   constructor(private httpClient: HttpClient) {
   }
@@ -26,8 +27,8 @@ export class CarService {
     return this.httpClient.put<ICar>(carUrls.cars.byId(id), updateCarData);
   }
 
-  delete(id: number,): void {
-    this.httpClient.delete(carUrls.cars.byId(id));
+  delete(id: number,): Observable<void> {
+    return this.httpClient.delete<void>(carUrls.cars.byId(id));
   }
 
   setTrigger(): void {
@@ -36,6 +37,13 @@ export class CarService {
 
   getTrigger(): Observable<boolean> {
     return this.trigger.asObservable();
+  }
+  setUpdateCar(updateCar: ICar): void {
+    this.updateCar.next(updateCar);
+  }
+
+  getUpdateCar(): Observable<ICar> {
+    return this.updateCar.asObservable();
   }
 
 }
